@@ -14,6 +14,6 @@ function myFonct($value){
 
 }
 }
-$value = 2.5;
+$value = 2;
 myFonct($value);
 ?>
