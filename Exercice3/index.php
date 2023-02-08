@@ -1,18 +1,19 @@
-<?php
 
-function  diviser ( $x , $y ) {
-     if ( $y == 0 ) {
-        throw new Exception( "Impossible de diviser par zéro" );
-    }
-  return   $x / $y ;
-}
+<?php 
+function myFonct($value){
+     try {
+           if (filter_var($value, FILTER_VALIDATE_INT) === false){
+               throw new Exception("The value is not valid integer");
+           } else{
+               echo  " validation complete";
+           }
+     }catch (Exception $e){
+           echo  "Erro "  .$e->getMessage();
+     
+} finally {
 
-// en utilisant l'instruction try..catch 
-try {
-     echo diviser( 2 , 0 );
-   echo diviser( 9 , 0 );
-} catch ( Exception  $e ) {
-     echo  "Erreur : Division par zéro." ;
 }
+}
+$value = 2.5;
+myFonct($value);
 ?>
-
